@@ -1,6 +1,9 @@
-dbt_packages/
+
 dbt_internal_packages/
 logs/
+synthea_raw_csv/
+.venv/
 target/
-.env
-synthea_raw_csv\
+dbt_packages/
+logs/
+*.duckdb
