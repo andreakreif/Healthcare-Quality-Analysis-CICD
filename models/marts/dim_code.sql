@@ -10,4 +10,4 @@ SELECT 'LOINC_'|| observation_code AS code_key,
     MAX(observation_description) AS code_description, 
     'LOINC' AS code_system
 FROM {{ ref('stg_observations'  ) }}
-GROUP BY observation_code;
+GROUP BY observation_code

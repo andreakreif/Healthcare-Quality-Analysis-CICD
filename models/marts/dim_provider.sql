@@ -6,4 +6,4 @@ SELECT
     provider_latitude,
     provider_longitude, 
     organization_id
-    FROM {{ ref('stg_providers') }};
+    FROM {{ ref('stg_providers') }}
