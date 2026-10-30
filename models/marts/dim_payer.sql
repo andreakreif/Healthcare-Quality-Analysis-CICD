@@ -10,5 +10,5 @@ SELECT
         THEN 'Government' 
         WHEN payer_name = 'NO_INSURANCE' THEN 'No Insurance' 
         ELSE 'Commercial' END AS payer_ownership       
-FROM {{ ref('stg_payers') }};
+FROM {{ ref('stg_payers') }}
 
