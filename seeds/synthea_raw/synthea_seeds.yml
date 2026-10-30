@@ -16,3 +16,4 @@ seeds:
     config:
       column_types:
         CODE: varchar
+        DATE: timestamptz
