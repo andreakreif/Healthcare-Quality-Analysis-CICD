@@ -24,13 +24,13 @@ SELECT
     DATE_TRUNC('year', d)                                   AS year_start_date,
     LAST_DAY(DATE_ADD(CURRENT_DATE, INTERVAL '1 year'))     AS year_end_date
 FROM days
-WHERE d <= STRPTIME('2050-12-31','%Y-%m-%d')::DATE
+WHERE d <= CAST(STRPTIME('2050-12-31','%Y-%m-%d') AS DATE)
 UNION ALL
 -- Sentinel rows
-SELECT 99991231, STRPTIME('9999-12-31','%Y-%m-%d'), 9999, 4, '9999-Q4', 12, 'December', '9999-12',
+SELECT 99991231, CAST(STRPTIME('9999-12-31','%Y-%m-%d') AS DATE), 9999, 4, '9999-Q4', 12, 'December', '9999-12',
   31, 365, 5, 'Friday', 52, 9999, FALSE,
-  STRPTIME('9999-12-01','%Y-%m-%d'), STRPTIME('9999-12-31','%Y-%m-%d'), 
-  STRPTIME('9999-01-01','%Y-%m-%d'), STRPTIME('9999-12-31','%Y-%m-%d')
+  CAST(STRPTIME('9999-12-01','%Y-%m-%d') AS DATE), CAST(STRPTIME('9999-12-31','%Y-%m-%d') AS DATE), 
+  CAST(STRPTIME('9999-01-01','%Y-%m-%d') AS DATE), CAST(STRPTIME('9999-12-31','%Y-%m-%d') AS DATE)
 UNION ALL
- SELECT-1, '1899-12-31', NULL, NULL, 'Unknown', NULL, 'Unknown', 'Unknown',
+ SELECT-1, CAST(STRPTIME('1899-12-31','%Y-%m-%d') AS DATE), NULL, NULL, 'Unknown', NULL, 'Unknown', 'Unknown',
   NULL, NULL, NULL, 'Unknown', NULL, NULL, NULL, NULL, NULL, NULL, NULL
