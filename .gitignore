@@ -5,5 +5,4 @@ synthea_raw_csv/
 .venv/
 target/
 dbt_packages/
-logs/
 *.duckdb
