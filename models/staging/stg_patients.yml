@@ -1,0 +1,9 @@
+models:
+  - name: stg_patients
+    description: Patient data with basic cleaning and transformation applied, one row per patient.
+    columns:
+      - name: patient_id
+        description: The unique key for each patient.
+        data_tests:
+          - not_null
+          - unique

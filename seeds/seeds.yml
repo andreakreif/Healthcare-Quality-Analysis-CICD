@@ -1,0 +1,11 @@
+seeds:
+  - name: encounter_class_map
+    config:
+      column_types:
+        is_qualifying_visit: boolean
+        is_attribution_visit: boolean
+        is_acute: boolean
+        is_hospice: boolean
+    columns:
+      - name: encounter_class
+        data_tests: [unique, not_null]

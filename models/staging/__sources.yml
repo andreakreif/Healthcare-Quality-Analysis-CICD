@@ -1,0 +1,26 @@
+version: 2
+
+
+sources:
+  - name: synthea
+    schema: "main_raw"
+    description: Synthetic healthcare data rom the Synthea project
+    tables:
+      - name: encounters
+        description: One record per provider-patient encounter
+        config:
+          loaded_at_field: stop
+      - name: patients
+        description: One record per patient       
+      - name: conditions
+        description: one record per encounter, patient, condition code
+      - name: observations
+        description: One record per date, encounter, patient,code, value
+        config:
+          loaded_at_field: date
+      - name: providers
+        description: One record per provider
+      - name: organizations
+        description: One record per organization
+      - name: payers
+        description: One record per payer 

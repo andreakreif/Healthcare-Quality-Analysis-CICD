@@ -1,0 +1,23 @@
+models:
+  - name: stg_conditions
+    description: Condition data with basic cleaning and transformation applied, one row per condition.
+    columns:
+      - name: condition_id
+        description: The unique key for each condition.
+        data_tests:
+          - not_null
+          - unique
+      - name: patient_id
+        description: The unique key for stg_patients.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_patients')
+              field: patient_id
+      - name: encounter_id
+        description: The unique key for stg_encounters.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_encounters')
+              field: encounter_id

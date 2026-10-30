@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_patient
+    description: Patients, one record per patient
+    columns:
+    - name: patient_id
+      description: primary key for table
+      data_tests:
+        - not_null
+        - unique

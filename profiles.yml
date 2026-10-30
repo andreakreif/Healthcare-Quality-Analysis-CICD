@@ -1,0 +1,6 @@
+cbp_analysis:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb

@@ -1,0 +1,18 @@
+seeds:
+  - name: encounters
+    config:
+      column_types:
+        CODE: varchar
+        REASONCODE: varchar
+        START: timestamptz
+        STOP: timestamptz
+  - name: conditions
+    config:
+      column_types:
+        START: date
+        STOP: date
+        CODE: varchar
+  - name: observations
+    config:
+      column_types:
+        CODE: varchar

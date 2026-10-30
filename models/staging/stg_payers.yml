@@ -1,0 +1,9 @@
+models:
+  - name: stg_payers
+    description: "Payer data with basic cleaning and transformation applied, one row per payer."
+    columns:
+      - name: payer_id
+        description: The unique key for each payer.
+        data_tests:
+          - not_null
+          - unique

@@ -1,0 +1,9 @@
+models:
+  - name: stg_organizations
+    description: "Provider organization data with basic cleaning and transformation applied, one row per organization."
+    columns:
+      - name: organization_id
+        description: The unique key for each provider organization.
+        data_tests:
+          - not_null
+          - unique

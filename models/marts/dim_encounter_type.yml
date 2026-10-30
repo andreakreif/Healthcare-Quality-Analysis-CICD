@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_encounter_type
+    description: Lookup table for encounter classifications.
+    columns:
+    - name: encounter_type_key
+      description: primary key for encounter type table (hash of encounter type and encounter code)
+        - not_null
+        - unique
+    - name: encounter_class
+      description: classification of encounter type in source data (wellness, outpatient, virtual, emergency, etc.)
+    - name: encounter_code
+      description: encounter code in source data (e.g., 308646001, 22298006, etc.) 
+    - name: encounter_description
+      description: description of encounter code in source data (e.g. 'Encounter for symptom (procedure)', 'Hospital admission', etc.)
+    - name: care_setting 
+      description: setting where care takes place
+    - name: is_qualifying_visit
+      description: flag indicating if the encounter is a qualifying visit for calculating measures
+    - name: is_attribution_visit
+      description: flag indicating if the encounter is to be used in attributing a provider to a measure
+    - name: is_acute
+      description: flag indicating if the encounter is for an acute condition
+    - name: is_hospice
+      description: flag indicating if the encounter is for a hospice visit (encounter_class ='hospice')

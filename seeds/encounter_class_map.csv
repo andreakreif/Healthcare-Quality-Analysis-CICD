@@ -1,0 +1,11 @@
+encounter_class,care_setting,is_qualifying_visit,is_attribution_visit,is_acute,is_hospice
+wellness,Ambulatory,true,true,false,false
+ambulatory,Ambulatory,true,true,false,false
+outpatient,Ambulatory,true,true,false,false
+virtual,Ambulatory,true,true,false,false
+urgentcare,Urgent Care,true,false,true,false
+emergency,Emergency,true,false,true,false
+inpatient,Inpatient,true,false,true,false
+snf,Post-Acute,true,false,false,false
+home,Home,false,false,false,false
+hospice,Hospice,false,false,false,true

@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: One record per date, providing attributes for each date
+    columns:
+    - name: date_key
+      description: Primary key for table, formatted as YYYYMMDD as integer
+      data_tests:
+        - not_null
+        - unique  

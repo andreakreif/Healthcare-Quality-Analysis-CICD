@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_payer
+    description: Lookup table for payers including a placeholder for 'No Insurance'
+    columns:
+    - name: payer_id
+      description: primary key for table
+      data_tests:
+        - not_null
+        - unique
+    - name: payer_type
+      description: Medicare, Medicaid, Dual Eligible, Commercial or No Insurance
+      data_tests:
+        - not_null
+    - name: payer_ownership
+      description: Government, Commercial or Insurance
+      data_tests:
+        - not_null

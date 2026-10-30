@@ -1,0 +1,16 @@
+models:
+  - name: stg_providers
+    description: "Provider data with basic cleaning and transformation applied, one row per provider."
+    columns:
+      - name: provider_id
+        description: The unique key for each provider.
+        data_tests:
+          - not_null
+          - unique
+      - name: organization_id
+        description: primary key for provider organization table 
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_organizations')
+              field: organization_id

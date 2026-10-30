@@ -1,0 +1,44 @@
+  models:
+  - name: stg_encounters
+    description: "Encounters data with basic cleaning and transformation applied, one row per encounter."
+    columns:
+      - name: encounter_id
+        description: The unique key for each encounter.
+        data_tests:
+          - not_null
+          - unique  
+      - name: patient_id
+        description: The unique key for each patient.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_patients')
+              field: patient_id
+      - name: organization_id
+        description: The unique key for each provider organization.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_organizations')
+              field: organization_id
+      - name: provider_id
+        description: The unique key for each provider.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_providers')
+              field: provider_id
+      - name: payer_id
+        description: The unique key for each payer.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_payers')
+              field: payer_id
+      - name: encounter_class
+        description: The class of encounter - 'emergency','wellness',etc.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('encounter_class_map')
+              field: encounter_class

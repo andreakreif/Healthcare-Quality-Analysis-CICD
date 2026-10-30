@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim_code
+    description: Lookup table for observation (LOINC) and condition (SNOMED) codes.
+    columns:
+    - name: code_key
+      description: primary key for table, concatenation of code system and code value
+      data_tests:
+        - not_null
+        - unique
+    - name: code  
+      description: code value for observation or condition
+    - name: code_description
+      description: description of the LOINC or SNOMED code    
+    - name: code_system
+      description: "SNOMED for conditions, LOINC for observations"
+
