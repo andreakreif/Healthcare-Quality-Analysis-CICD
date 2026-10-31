@@ -5,7 +5,7 @@
 */
 with source as (
 	select *
-	from {{ ref( 'observations') }}
+	from {{ ref('observations') }}
     where code not in ('QALY', 'DALY','QOLS')
 ),
 
